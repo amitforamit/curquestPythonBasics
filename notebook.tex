@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{Strings}
+    \title{string built-in methods}
     
     
     
@@ -280,392 +280,413 @@
     
 
     
-    \hypertarget{strings}{%
-\section{Strings}\label{strings}}
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{st} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello String!}\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
 
-    Strings are basically text data. It is sequence of different characters.
-e.g. ``Hello'' is sequence of `H',`e',`l',`l' and `o'. We can use
-indexing and do slicing on strings.
-
-    Either single quote '' or double qoute "" can be used to form a string
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{}Single quote}
-        \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{st}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} 'hello'
+{\color{outcolor}Out[{\color{outcolor}2}]:} 'Hello String!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{hello world}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} built\PYZhy{}in string methods. }
+        \PY{c+c1}{\PYZsh{} Methods are packaged actions on objects }
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{st}\PY{o}{.}\PY{n}{upper}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} 'hello world'
+{\color{outcolor}Out[{\color{outcolor}4}]:} 'HELLO STRING!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{}double quote}
-        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{hello world, this is a long sentence}\PY{l+s+s2}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{st}\PY{o}{.}\PY{n}{lower}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} 'hello world, this is a long sentence'
+{\color{outcolor}Out[{\color{outcolor}5}]:} 'hello string!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{}if you have a double quote within your string \PYZhy{} use string within single quote and vice versa \PYZhy{} otherwise , will throw error}
-        \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{here is }\PY{l+s+s1}{\PYZdq{}}\PY{l+s+s1}{double quote}\PY{l+s+s1}{\PYZdq{}}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{st}\PY{o}{.}\PY{n}{capitalize}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Upper case the first letter }
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 'here is "double quote"'
+{\color{outcolor}Out[{\color{outcolor}6}]:} 'Hello string!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{here is }\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{single quote}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{st}\PY{o}{.}\PY{n}{casefold}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} "here is 'single quote'"
+{\color{outcolor}Out[{\color{outcolor}7}]:} 'hello string!'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{}Introducing new line in string}
-        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is first line }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ this is next line}\PY{l+s+s2}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{st}\PY{o}{.}\PY{n}{center}\PY{p}{(}\PY{l+m+mi}{40}\PY{p}{,}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{0}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} 'this is first line \textbackslash{}n this is next line'
+{\color{outcolor}Out[{\color{outcolor}11}]:} '0000000000000Hello String!00000000000000'
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is first line}\PY{l+s+s2}{\PYZdq{}}
-        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is next line}\PY{l+s+s2}{\PYZdq{}}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{st}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{l}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns the number of times a specified value occurs in a string}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} 'this is next line'
+{\color{outcolor}Out[{\color{outcolor}13}]:} 2
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{c+c1}{\PYZsh{}print function}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is first line}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is next line}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-this is first line
-this is next line
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is first line }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s2}{ this is next line}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-this is first line 
- this is next line
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is first line }\PY{l+s+se}{\PYZbs{}t}\PY{l+s+s2}{ this is next line}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-this is first line 	 this is next line
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{this is first line }\PY{l+s+se}{\PYZbs{}\PYZbs{}}\PY{l+s+s2}{ this is next line}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-this is first line \textbackslash{} this is next line
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{c+c1}{\PYZsh{}ASCII carriage return (CR). Moves all characters after ( CR ) to}
-         \PY{c+c1}{\PYZsh{}the beginning of the line while overriding same number of characters moved.}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{12345678901234567891234567890 }\PY{l+s+se}{\PYZbs{}r}\PY{l+s+s2}{ this is next line}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
- this is next line
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}18}]:} \PY{c+c1}{\PYZsh{}unicode database name \PYZhy{}\PYZhy{} \PYZbs{}N\PYZob{}unicode database name\PYZcb{}}
-         \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}N\PYZob{}Double exclamation mark\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-‼
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+se}{\PYZbs{}N\PYZob{}DAGGER\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-†
-
-    \end{Verbatim}
-
-    \hypertarget{string-variable}{%
-\section{String Variable}\label{string-variable}}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{st} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello World!}\PY{l+s+s2}{\PYZdq{}}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{st}
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{st}\PY{o}{.}\PY{n}{endswith}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns true if the string ends with the specified value}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}14}]:} True
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{st}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Hello World!
-
-    \end{Verbatim}
-
-    \hypertarget{indexing}{%
-\section{Indexing}\label{indexing}}
-
-    Each character in the string gets an index number and it starts from 0
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{st}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{st}\PY{o}{.}\PY{n}{startswith}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{!}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns true if the string starts with the specified value}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}5}]:} False
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{st}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{st}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} 'H'
+{\color{outcolor}Out[{\color{outcolor}16}]:} -1
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{st}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{st}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{s}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} 'e'
+{\color{outcolor}Out[{\color{outcolor}17}]:} -1
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{st}\PY{p}{[}\PY{l+m+mi}{8}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{st}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{S}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}Searches the string for a specified value and returns the position of where it was found}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} 'r'
-\end{Verbatim}
-            
-    \hypertarget{slicing}{%
-\section{Slicing}\label{slicing}}
-
-    Getting parts of your string
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{st}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}18}]:} 6
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{st}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{st}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{l}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} 'Hell'
+{\color{outcolor}Out[{\color{outcolor}7}]:} 2
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{st}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]} \PY{c+c1}{\PYZsh{}it is upto 5 but not inclusing 5th index}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{st}\PY{o}{.}\PY{n}{rfind}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{l}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}Searches the string for a specified value and returns the last position of where it was found}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} 'Hello'
+{\color{outcolor}Out[{\color{outcolor}6}]:} 3
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{st}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{H}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}15}]:} 'Hello'
-\end{Verbatim}
-            
-    it does not change your original string
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{st}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:} 'Hello World!'
-\end{Verbatim}
-            
-    slicing can be done backward also
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{st}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}18}]:} '!'
+{\color{outcolor}Out[{\color{outcolor}3}]:} 0
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{st}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{S}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)} \PY{c+c1}{\PYZsh{}Searches the string for a specified value and returns the position of where it was found}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}16}]:} 'Hello World'
+{\color{outcolor}Out[{\color{outcolor}4}]:} 6
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{st}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{l}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}17}]:} 'Hello World!'
-\end{Verbatim}
-            
-    slicing step wise
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{p}{]} \PY{c+c1}{\PYZsh{}st[::1]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}19}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}37}]:} 2
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{st}\PY{o}{.}\PY{n}{rindex}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{l}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}20}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}36}]:} 3
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{st}\PY{o}{.}\PY{n}{isalnum}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns True if all characters in the string are alphanumeric}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}21}]:} 'HloWrd'
+{\color{outcolor}Out[{\color{outcolor}8}]:} False
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{st}\PY{p}{[}\PY{p}{:}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{st}\PY{o}{.}\PY{n}{isalpha}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns True if all characters in the string are in the alphabet}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}22}]:} '!dlroW olleH'
-\end{Verbatim}
-            
-    string concatenation - using `+'
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{st} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ concatenated}\PY{l+s+s1}{\PYZsq{}}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}24}]:} 'Hello World! concatenated'
-\end{Verbatim}
-            
-    until now we have not changed our original string
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{st}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}26}]:} 'Hello World!'
+{\color{outcolor}Out[{\color{outcolor}9}]:} False
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{st} \PY{o}{=} \PY{n}{st} \PY{o}{+} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ concatenated}\PY{l+s+s1}{\PYZsq{}}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{st}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{isalpha}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}28}]:} 'Hello World! concatenated'
+{\color{outcolor}Out[{\color{outcolor}10}]:} True
 \end{Verbatim}
             
-    string repetition using '*'
-
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{st}\PY{o}{*}\PY{l+m+mi}{3}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{123H}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{isalpha}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns True if all characters in the string are in the alphabet}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}29}]:} 'Hello World! concatenatedHello World! concatenatedHello World! concatenated'
+{\color{outcolor}Out[{\color{outcolor}11}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n}{st}\PY{o}{.}\PY{n}{isdigit}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{123}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{isdigit}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns True if all characters in the string are digits}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}17}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{st}\PY{o}{.}\PY{n}{islower}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns True if all characters in the string are lower case}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}18}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{st}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} 'Hello String!'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{stlower} \PY{o}{=} \PY{n}{st}\PY{o}{.}\PY{n}{lower}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{stlower}\PY{o}{.}\PY{n}{islower}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}21}]:} True
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{st}\PY{o}{.}\PY{n}{isupper}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns True if all characters in the string are upper case}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}26}]:} False
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{st} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{   my string      }\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{st}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}29}]:} '   my string      '
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{st}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Returns a trim version of the string}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}31}]:} 'my string'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{st}\PY{o}{.}\PY{n}{lstrip}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}32}]:} 'my string      '
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{st}\PY{o}{.}\PY{n}{rstrip}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}33}]:} '   my string'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{st} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello String!}\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{st}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} 'Hello String!'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{st}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hello}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Hi}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}40}]:} 'Hi String!'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{st}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}41}]:} 'Hello String!'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}43}]:} \PY{n}{st}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Splits the string at the specified separator, and returns a list}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}43}]:} ['Hello', 'String!']
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}44}]:} \PY{n}{st} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Apples,Bananas,Mangoes,Guavas}\PY{l+s+s2}{\PYZdq{}}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{st}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}45}]:} 'Apples,Bananas,Mangoes,Guavas'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{st}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)} 
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}46}]:} ['Apples,Bananas,Mangoes,Guavas']
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{st}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}47}]:} ['Apples', 'Bananas', 'Mangoes', 'Guavas']
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{st}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{,}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}48}]:} ['Apples', 'Bananas', 'Mangoes,Guavas']
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{st}\PY{o}{.}\PY{n}{swapcase}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Swaps cases, lower case becomes upper case and vice versa}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}49}]:} 'aPPLES,bANANAS,mANGOES,gUAVAS'
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{st}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{p}{)} \PY{c+c1}{\PYZsh{}Converts the first character of each word to upper case}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}27}]:} 'Hello String!'
 \end{Verbatim}
             
 
