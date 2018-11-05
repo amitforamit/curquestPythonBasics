@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+.multiselect {
+  width: 200px;
+  left: 0;
+}
+
+.multiselectCol2 {
+  width: 100px;
+}
+.selectBox {
+  position: relative;
+}
+
+.selectBox select {
+  width: 100%;
+  font-weight: bold;
+}
+
+.overSelect {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.checkboxes {
+  display: none;
+  border: 1px #dadada solid;
+}
+
+.checkboxes label {
+  display: block;
+}
+
+.checkboxes label:hover {
+  background-color: #1e90ff;
+}
+</style>
+</head>
+<body>
+
+<h2>My Customers</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<!-- <select id="col1DropDown" > </select> -->
+
+
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Berglunds snabbkop</td>
+    <td>Sweden</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Koniglich Essen</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Italy</td>
+  </tr>
+  <tr>
+    <td>North/South</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Paris specialites</td>
+    <td>France</td>
+  </tr>
+   <tr>
+    <td>Paris specialites</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>France</td>
+  </tr>
+</table>
+
+<form>
+  <div class="multiselect">
+    <div id="drpDown1" class="selectBox" onclick="showCheckboxes('checkboxes')">
+      <select>
+        <option>Select an option</option>
+      </select>
+      <div id = "overSlct" class="overSelect"></div>
+    </div>
+    <div id="checkboxes" class="checkboxes" >    </div>
+  </div>
+</form>
+
+
+<form>
+  <div class="multiselect">
+    <div id="drpDown2" class="selectBox" onclick="showCheckboxesCol2('checkboxesCol2')">
+      <select>
+        <option>Select an option</option>
+      </select>
+      <div id = "overSlctCol2" class="overSelect"></div>
+    </div>
+    <div id="checkboxesCol2" class="checkboxes" >    </div>
+  </div>
+</form>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+<!-- <script>
+window.onload = function dynDrpDown() {
+  var table, tr, td, i,varOption;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  varOption = "";
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (varOption.toUpperCase().indexOf(td.innerHTML) == -1) {
+        varOption = varOption + "<option>" + td.innerHTML + "</option>"
+      }
+    }       
+  }
+  document.getElementById("col1DropDown").innerHTML = varOption
+} 
+
+</script> -->
+
+<script>
+
+var trStatus = []
+window.onload = function dynDrpDown() {
+  var table, tr, td, i,varOption,p,q;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  
+
+  
+  for (var p = 0; p < tr.length; p++) {
+	trStatus.push([true]);
+	for (var q = 0; q < 2; q++) {
+		trStatus[p][q] = true;
+	}
+}
+    
+  varOption = "";
+  chCounter = 1
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td && tr[i].style.display != "none") {
+      if (varOption.toUpperCase().indexOf(td.innerHTML.toUpperCase()) == -1) {
+        varOption = varOption +  '<label for= \"ch' + chCounter + '\"> <input type=\"checkbox\" id=\"ch' + chCounter + '\" onclick= \"myCheckFunction(\'ch' + chCounter + '\')\" checked/>' + td.innerHTML + '</label>'
+		chCounter = chCounter+1
+      }
+    }       
+  }
+  document.getElementById("checkboxes").innerHTML = varOption
+ 
+  i=0; 
+  varOption = "";
+  chCounter = 1
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td && tr[i].style.display != "none") {
+      if (varOption.toUpperCase().indexOf(td.innerHTML.toUpperCase()) == -1) {
+        varOption = varOption +  '<label for= \"ch2' + chCounter + '\"> <input type=\"checkbox\" id=\"ch2' + chCounter + '\" onclick= \"myCheckFunctionCol2(\'ch2' + chCounter + '\')\" checked/>' + td.innerHTML + '</label>'
+		chCounter = chCounter+1
+      }
+    }       
+  }
+  document.getElementById("checkboxesCol2").innerHTML = varOption
+}
+</script>
+<script>
+	var expanded = false;
+	var expandedCol2 = false;
+	
+function showCheckboxes(chkBx) {
+  var checkboxes = document.getElementById(chkBx);
+  if (!expanded) {
+    checkboxes.style.display = "block";
+    expanded = true;
+  } else {
+    checkboxes.style.display = "none";
+    expanded   = false;
+  }
+}
+
+function showCheckboxesCol2(chkBx) {
+  var checkboxes = document.getElementById(chkBx);
+  if (!expandedCol2) {
+    checkboxes.style.display = "block";
+    expandedCol2 = true;
+  } else {
+    checkboxes.style.display = "none";
+    expandedCol2   = false;
+  }
+}
+
+window.addEventListener('mouseup', function(event){
+	var box = document.getElementById('checkboxes');
+	var notbox = document.getElementById('overSlct');
+	if (event.target != notbox && event.target.parentNode.parentNode != box && expanded){
+        box.style.display = 'none';
+		expanded = false;
+    }
+	var box = document.getElementById('checkboxesCol2');
+	var notbox = document.getElementById('overSlctCol2');
+	if (event.target != notbox && event.target.parentNode.parentNode != box && expandedCol2){
+        box.style.display = 'none';
+		expandedCol2 = false;
+    }
+});
+
+
+function myCheckFunction(chkid) {
+  var  table, tr, td, i;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  var checks = document.getElementById("checkboxes").getElementsByTagName("input");
+  for (var k=0; k < checks.length; ++k) {
+	  if (checks[k].type == "checkbox" && checks[k].id == chkid)
+		{ 
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[0];
+			if (td ) {
+			  if (td.innerHTML.toUpperCase().indexOf(checks[k].parentNode.innerText.toUpperCase()) > -1) {
+				if (checks[k].checked) {
+						//tr[i].style.display = "";
+						trStatus[i][0] = true;
+					} else {
+						//tr[i].style.display = "none";
+						trStatus[i][0] = false;
+				}
+			  }
+			}       
+		  }
+		}
+	}
+	rowShow();
+	dynDrpDown1(0);
+}
+
+function myCheckFunctionCol2(chkid) {
+  var  table, tr, td, i;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  var checks = document.getElementById("checkboxesCol2").getElementsByTagName("input");
+  for (var k=0; k < checks.length; ++k) {
+	  if (checks[k].type == "checkbox" && checks[k].id == chkid)
+		{ 
+		  for (i = 0; i < tr.length; i++) {
+			td = tr[i].getElementsByTagName("td")[1];
+			if (td ) {
+			  if (td.innerHTML.toUpperCase().indexOf(checks[k].parentNode.innerText.toUpperCase()) > -1) {
+				if (checks[k].checked) {
+						//tr[i].style.display = "";
+						trStatus[i][1] = true;
+					} else {
+						//tr[i].style.display = "none";
+						trStatus[i][1] = false;
+				}
+			  }
+			}       
+		  }
+		}
+	}
+	rowShow()
+	dynDrpDown1(1);
+}
+
+function rowShow() {
+  var  table, tr, td, i,st;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  
+  function getAnd(anded, num) {
+    return anded && num;
+  }
+	
+  for (i = 0; i < tr.length; i++) {
+	st = trStatus[i].reduce(getAnd)
+	if (st){
+		tr[i].style.display = "";
+	} else{
+		tr[i].style.display = "none";
+	}
+  }
+}
+
+
+function dynDrpDown1(clFld) {
+  var table, tr, td, i,varOption;
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  if (clFld != 0) {
+	  varOption = "";
+	  chCounter = 1
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td && tr[i].style.display != "none") {
+		  if (varOption.toUpperCase().indexOf(td.innerHTML.toUpperCase()) == -1) {
+			varOption = varOption +  '<label for= \"ch' + chCounter + '\"> <input type=\"checkbox\" id=\"ch' + chCounter + '\" onclick= \"myCheckFunction(\'ch' + chCounter + '\')\" checked/>' + td.innerHTML + '</label>'
+			chCounter = chCounter+1
+		  }
+		}      
+	  }
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[0];
+		if (td && tr[i].style.display == "none") {
+		  if (varOption.toUpperCase().indexOf(td.innerHTML.toUpperCase()) == -1) {
+			varOption = varOption +  '<label for= \"ch' + chCounter + '\"> <input type=\"checkbox\" id=\"ch' + chCounter + '\" onclick= \"myCheckFunction(\'ch' + chCounter + '\')\" />' + td.innerHTML + '</label>'
+			chCounter = chCounter+1
+		  }
+		}      
+	  }
+	  document.getElementById("checkboxes").innerHTML = varOption
+  }
+  
+  if (clFld != 1) {
+	  i=0; 
+	  varOption = "";
+	  chCounter = 1
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[1];
+		if (td && tr[i].style.display != "none") {
+		  if (varOption.toUpperCase().indexOf(td.innerHTML.toUpperCase()) == -1) {
+			varOption = varOption +  '<label for= \"ch2' + chCounter + '\"> <input type=\"checkbox\" id=\"ch2' + chCounter + '\" onclick= \"myCheckFunctionCol2(\'ch2' + chCounter + '\')\" checked/>' + td.innerHTML + '</label>'
+			chCounter = chCounter+1
+		  }
+		} 
+	  }
+	  for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[1];
+		if (td && tr[i].style.display == "none") {
+		  if (varOption.toUpperCase().indexOf(td.innerHTML.toUpperCase()) == -1) {
+			varOption = varOption +  '<label for= \"ch2' + chCounter + '\"> <input type=\"checkbox\" id=\"ch2' + chCounter + '\" onclick= \"myCheckFunctionCol2(\'ch2' + chCounter + '\')\" />' + td.innerHTML + '</label>'
+			chCounter = chCounter+1
+		  }
+		} 
+	  }
+	}
+}
+</script>
+</body>
+</html>
